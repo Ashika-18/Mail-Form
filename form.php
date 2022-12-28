@@ -1,30 +1,40 @@
+<?php
+$pageFlg = 0;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登録フォーム</title>
+    <title>mail-form</title>
 </head>
 <body>
+    <?php if ($pageFlg === 0) : ?>
     <form action="form.php" method="post">
+        <input type="checkbox" name="sample[]" value="aa">aa
+        <input type="checkbox" name="sample[]" value="bb">bb
+        <input type="checkbox" name="sample[]" value="cc">cc<br>
 
-        <input type="checkbox" >
+        <input type="text" name="name" value="" placeholder="お名前"><br>
+        <input type="email" name="email" value="" placeholder="メールアドレス"><br>
 
-        <label for="name">名前</label>
-        <input type="text" id="name" value="" required>
+        <input type="submit" value="確認">
+    </form>
 
-        <label for="email">メールアドレス</label>
-        <input type="email" id="email" value="" required>
+    <?php elseif ($pageFlg === 1) : ?>
+    <form action="form.pnp" method="post">
+        <input type="hidden" name="name" value="<?= $_POST['name']; ?>">
+        <input type="hidden" name="email" value="<?= $_POST['email']; ?>">
+        name <?= $_POST['name']; ?>
+        email <?= $_POST['email']; ?>
+        <input type="submit" value="送信">
+    </form>
 
-        <label for="title">件名</label>
-        <input type="text" id="title" value="" required>
+    <?php if ($pageFlg === 2)?>
+    <form action="form.php">
 
-        <label for="content">お問い合わせ内容</label>
-        <textarea name="content" id="content"></textarea>
-
-        <button type="submit" value="送信">送信</button>
-        <button type="back" value="戻る">戻る</button>
     </form>
 </body>
 </html>
