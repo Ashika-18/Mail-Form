@@ -1,0 +1,40 @@
+body {
+    font-family: "Kokoro";
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+#form {
+    display: flex;
+    flex-flow: column;
+}
+
+.cell {
+    display: block;
+}
+
+#name {
+    border: solid 1px;
+    margin: 2rem auto;
+}
+
+#email {
+    border: solid 1px;
+    margin: 2rem auto;
+}
+
+#content {
+    border: solid 1px;
+    border-radius: 5px;
+    margin: 2rem auto;
+}
+
+#btn {
+    text-align: center;
+    display: inline;
+    border: solid 2px;
+    margin: 0 auto;
+}
